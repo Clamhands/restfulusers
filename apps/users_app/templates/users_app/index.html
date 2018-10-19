@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table table-dark">
+        
+            
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Created At</th>
+            <th scope="col">Actions</th>
+            
+        
+                <tr>{% for users in test%}
+                  <th scope="row">{{users.id}}</th>
+                  <td>{{users.name}}</td>
+                  <td>{{users.email}}</td>
+                  <td>{{users.created_at}}</td>
+                  <td><a href="/delete/{{users.id}}">Delete</a>
+                        <a href="/edit/{{users.id}}">Edit</a>
+                        <a href="/show/{{users.id}}">Show</a>
+                    </td>
+                  </tr>
+                  {% endfor %}
+            
+            </table>
+            <a href="/gonew">Make New User</a>
+
+    
+</body>
+</html>
